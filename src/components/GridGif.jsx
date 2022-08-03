@@ -1,5 +1,5 @@
-import { GifItem } from "./GifItem";
-import { useFetchGifs } from "../hooks/useFetchGifs";
+import { GifItem } from './GifItem';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 
 export const GridGif = ({ category }) => {
   // hook personalizado

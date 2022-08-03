@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getGif } from "../helpers/getGifs";
+import { useEffect, useState } from 'react';
+import { getGif } from '../helpers/getGifs';
 
 export const useFetchGifs = (category) => {
   // el hook es una funcion que regresa algo

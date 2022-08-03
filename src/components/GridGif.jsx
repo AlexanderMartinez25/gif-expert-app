@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
-import { getGif } from "../helpers/getGifs";
 import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GridGif = ({ category }) => {
-  const [images, setImages] = useState([]);
-
-  const getImages = async () => {
-    const newImages = await getGif(category);
-    setImages(newImages);
-  };
-
-  // efectos secundarios, si le pasamos [] como segundo argumento
-  // solo se dispararé una única vez
-  useEffect(() => {
-    getImages();
-  }, []);
+  // hook personalizado
+  const { images, isLoading } = useFetchGifs(category);
 
   return (
     <>
@@ -22,7 +11,6 @@ export const GridGif = ({ category }) => {
 
       <div className="card-grid">
         {images.map((image) => (
-          // <GridGif id={images.id} key={images.id} category={category} />
           <GifItem key={image.id} id={image.id} {...image} />
         ))}
       </div>

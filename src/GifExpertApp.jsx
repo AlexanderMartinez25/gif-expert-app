@@ -5,7 +5,8 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState(["One Punch", "God of War"]);
 
   const onAddCategory = (newCategory) => {
-    console.log(newCategory);
+    // no permitir valores duplicados
+    if (categories.includes(newCategory)) return;
     // setCategories((categories) => [...categories, "Devil May Cry"]);
     setCategories([...categories, newCategory]);
   };

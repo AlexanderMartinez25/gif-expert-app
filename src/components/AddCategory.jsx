@@ -1,18 +1,24 @@
 import { useState } from "react";
 
-export const AddCategory = () => {
-  const [inputValue, setInputValue] = useState("Metal Gear");
+export const AddCategory = ({ setCategories }) => {
+  const [inputValue, setInputValue] = useState("");
+
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(inputValue);
+
+    if (inputValue.trim().length <= 1) return;
+    // al traer la funcion del useState, se trae hasta la variable "categories"
+    setCategories((categories) => [inputValue, ...categories]);
+
+    setInputValue("");
   };
 
   return (
-    <form onSubmit={(event) => onSubmit(event)}>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         placeholder="Buscar Gif"

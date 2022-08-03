@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { AddCategory } from './components/AddCategory';
-import { GridGif } from './components/GridGif';
+import { AddCategory, GridGif } from './components';
 
 export const GifExpertApp = () => {
   const [categories, setCategories] = useState(['God of War']);
@@ -8,8 +7,7 @@ export const GifExpertApp = () => {
   const onAddCategory = (newCategory) => {
     // no permitir valores duplicados
     if (categories.includes(newCategory)) return;
-    // setCategories((categories) => [...categories, "Devil May Cry"]);
-    setCategories([...categories, newCategory]);
+    setCategories([newCategory, ...categories]);
   };
 
   return (

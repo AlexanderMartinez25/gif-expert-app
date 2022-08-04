@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas a <GifItem/> Debe evualuar Snapshot 1`] = `
+exports[`Pruebas a <GifItem/> debe evualuar Snapshot 1`] = `
 <div>
   <div
     class="card"
   >
     <img
       alt="Hola Mundo"
-      src="https://youtube.com"
+      src="https://youtube.com/img.png"
     />
     <p>
       Hola Mundo

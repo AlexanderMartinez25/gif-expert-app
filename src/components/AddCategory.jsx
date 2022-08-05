@@ -14,12 +14,12 @@ export const AddCategory = ({ onNewCategory }) => {
     // al traer la funcion del useState, se trae hasta la variable "categories"
     // setCategories((categories) => [inputValue, ...categories]);
 
-    onNewCategory(inputValue.trim());
     setInputValue('');
+    onNewCategory(inputValue.trim());
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form">
       <input
         type="text"
         placeholder="Buscar Gif"
